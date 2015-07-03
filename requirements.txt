@@ -8,7 +8,7 @@ future==0.9.0
 grappelli-safe==0.3.13
 gunicorn==19.3.0
 html5lib==0.99999
-Mezzanine==3.1.10
+-e git+git://github.com/stephenmcd/mezzanine.git@c7bc3e74d8487c6b23417ac099a46aa5c486c369#egg=mezzanine
 oauthlib==0.7.2
 Pillow==2.8.2
 psycopg2==2.6.1
