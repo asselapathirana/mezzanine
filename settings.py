@@ -391,7 +391,21 @@ DATABASES = {
 
 ALLOWED_HOSTS=[ os.getenv("HOSTS1","")]
 
-
+# FABRIC = {
+#     "SSH_USER": "remoteu3", # SSH username for host deploying to
+#     "HOSTS": ALLOWED_HOSTS[:1], # List of hosts to deploy to (eg, first host)
+#     "DOMAINS": ALLOWED_HOSTS, # Domains for public site
+#     "REPO_URL": "ssh://git@github.com:asselapathirana/mezzanine.git", # Project's repo URL
+#     "VIRTUALENV_HOME":  "/webapps/mezzanine", # Absolute remote path for virtualenvs
+#     "PROJECT_NAME": "mezzanine1", # Unique identifier for project
+#     "REQUIREMENTS_PATH": "requirements.txt", # Project's pip requirements
+#     "GUNICORN_PORT": 8000, # Port gunicorn will listen on
+#     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
+#     "DB_PASS": "dfdfdfdx", # Live database password
+#     "ADMIN_PASS": "dsddfdl", # Live admin user password
+#     "SECRET_KEY": SECRET_KEY,
+#     "NEVERCACHE_KEY": NEVERCACHE_KEY,
+# }
 
 ##################
 # LOCAL SETTINGS #
