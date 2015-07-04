@@ -394,6 +394,8 @@ DATABASES = {
 
 ALLOWED_HOSTS=[ os.getenv("HOSTS1","")]
 
+from os.path import abspath, basename, dirname, join, normpath
+
 DJANGO_ROOT = dirname(dirname(dirname(abspath(__file__))))
 PROJECT_ROOT = dirname(DJANGO_ROOT)
 STATIC_ROOT = join(PROJECT_ROOT, 'static')
