@@ -1,0 +1,28 @@
+---
+
+- name: Run ad-hoc commands needed by specific app
+  hosts: webservers
+  sudo: yes
+  sudo_user: "{{application_directory}}" 
+  remote_user: "{{remoteu}}"
+  vars:
+     - dumb: true
+
+  vars_files:
+     - env_vars/{{ env }}.yml
+     - roles/web/vars/main.yml
+     - ./pass_ex.yml 
+     - ../pass.yml # always use last
+     
+
+  tasks: 
+ 
+   - name: Run Django collectstatic
+     django_manage:
+        command: collectstatic
+        app_path: "{{ project_path }}"
+        virtualenv: "{{ virtualenv_path }}"
+        settings: "{{ django_settings_file }}"
+     environment: django_environment
+
+ 
