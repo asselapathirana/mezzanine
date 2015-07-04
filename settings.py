@@ -201,11 +201,14 @@ CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_DIRNAME
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = "/static/"
 
+
+
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -391,21 +394,10 @@ DATABASES = {
 
 ALLOWED_HOSTS=[ os.getenv("HOSTS1","")]
 
-# FABRIC = {
-#     "SSH_USER": "remoteu3", # SSH username for host deploying to
-#     "HOSTS": ALLOWED_HOSTS[:1], # List of hosts to deploy to (eg, first host)
-#     "DOMAINS": ALLOWED_HOSTS, # Domains for public site
-#     "REPO_URL": "ssh://git@github.com:asselapathirana/mezzanine.git", # Project's repo URL
-#     "VIRTUALENV_HOME":  "/webapps/mezzanine", # Absolute remote path for virtualenvs
-#     "PROJECT_NAME": "mezzanine1", # Unique identifier for project
-#     "REQUIREMENTS_PATH": "requirements.txt", # Project's pip requirements
-#     "GUNICORN_PORT": 8000, # Port gunicorn will listen on
-#     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
-#     "DB_PASS": "dfdfdfdx", # Live database password
-#     "ADMIN_PASS": "dsddfdl", # Live admin user password
-#     "SECRET_KEY": SECRET_KEY,
-#     "NEVERCACHE_KEY": NEVERCACHE_KEY,
-# }
+DJANGO_ROOT = dirname(dirname(dirname(abspath(__file__))))
+PROJECT_ROOT = dirname(DJANGO_ROOT)
+STATIC_ROOT = join(PROJECT_ROOT, 'static')
+
 
 ##################
 # LOCAL SETTINGS #
